@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{DC90ADAE-5BFA-41B9-AF47-90B866AAEC93}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ThreadComm.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Tasks.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Threads.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ThreadComm">
+        <MSBuild Projects="ThreadComm.dproj"/>
+    </Target>
+    <Target Name="ThreadComm:Clean">
+        <MSBuild Projects="ThreadComm.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ThreadComm:Make">
+        <MSBuild Projects="ThreadComm.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Tasks">
+        <MSBuild Projects="Tasks.dproj"/>
+    </Target>
+    <Target Name="Tasks:Clean">
+        <MSBuild Projects="Tasks.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Tasks:Make">
+        <MSBuild Projects="Tasks.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Threads">
+        <MSBuild Projects="Threads.dproj"/>
+    </Target>
+    <Target Name="Threads:Clean">
+        <MSBuild Projects="Threads.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Threads:Make">
+        <MSBuild Projects="Threads.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ThreadComm;Tasks;Threads"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ThreadComm:Clean;Tasks:Clean;Threads:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ThreadComm:Make;Tasks:Make;Threads:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

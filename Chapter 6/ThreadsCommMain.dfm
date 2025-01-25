@@ -2,20 +2,18 @@ object frmThreadComm: TfrmThreadComm
   Left = 0
   Top = 0
   Caption = 'ThreadComm'
-  ClientHeight = 305
-  ClientWidth = 641
+  ClientHeight = 297
+  ClientWidth = 639
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   OnDestroy = FormDestroy
   DesignSize = (
-    641
-    305)
-  PixelsPerInch = 96
+    639
+    297)
   TextHeight = 13
   object btnStart: TButton
     Left = 16
@@ -29,8 +27,8 @@ object frmThreadComm: TfrmThreadComm
   object ListBox1: TListBox
     Left = 168
     Top = 16
-    Width = 459
-    Height = 275
+    Width = 457
+    Height = 267
     Anchors = [akLeft, akTop, akRight, akBottom]
     ItemHeight = 13
     TabOrder = 8
